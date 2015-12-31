@@ -9,6 +9,8 @@ var webpackConfig = {
   context: path.join(__dirname, 'src'),
   entry: {
     GoodsItem: './goods-item/index',
+    GoodsItemDetails: ['./goods-item/item-details/index'],
+    GoodsItemPhotos: ['./goods-item/item-photos/index'],
   },
   output: {
     path: path.join(__dirname, 'lib'),

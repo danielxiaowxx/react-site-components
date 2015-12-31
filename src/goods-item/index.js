@@ -3,9 +3,18 @@
  */
 
 var React = require('react');
+var ItemDetail = require('./item-details');
+var ItemPhotos = require('./item-photos');
 
-export default React.createClass({
+var GoodsItem = React.createClass({
   render: function() {
-    return <div>Hello Daniel</div>
+    return (
+      <div>
+        <ItemDetail />
+        <ItemPhotos />
+      </div>
+    )
   }
 });
+
+module.exports = GoodsItem;
