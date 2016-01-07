@@ -3,20 +3,19 @@
  */
 
 var path = require('path');
-var webpack = require('webpack');
 
 var webpackConfig = {
   context: path.join(__dirname, 'src'),
   entry: {
     GoodsItem: './goods-item/index',
-    GoodsItemDetails: ['./goods-item/item-details/index'],
-    GoodsItemPhotos: ['./goods-item/item-photos/index'],
+    GoodsItemDetails: ['./goods-item/details/index'],
+    GoodsItemPhotos: ['./goods-item/photos/index'],
   },
   output: {
     path: path.join(__dirname, 'lib'),
-    filename: 'Gm[name].js',
+    filename: '[name].js',
     sourceMapFilename: '[file].map',
-    library: 'Gm[name]',
+    library: '[name]',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
@@ -36,7 +35,7 @@ var webpackConfig = {
           path.resolve(__dirname, "src")
         ],
         loader: 'babel-loader?presets[]=es2015&presets[]=react'
-      },
+      }
     ]
   }
 };

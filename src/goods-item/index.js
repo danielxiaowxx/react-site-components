@@ -3,13 +3,13 @@
  */
 
 var React = require('react');
-var ItemDetail = require('./item-details');
-var ItemPhotos = require('./item-photos');
+var ItemDetail = require('./details');
+var ItemPhotos = require('./photos');
 
 var GoodsItem = React.createClass({
   render: function() {
     return (
-      <div>
+      <div className="goods-item">
         <ItemDetail />
         <ItemPhotos />
       </div>

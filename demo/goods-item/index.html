@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Test the components</title>
+
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../lib/goods-item/GoodsItem.css">
+
     <script type="text/javascript" src="../../node_modules/react/dist/react.js"></script>
     <script type="text/javascript" src="../../node_modules/react-dom/dist/react-dom.js"></script>
-    <script type="text/javascript" src="../../lib/GmGoodsItem.js"></script>
+    <script type="text/javascript" src="../../lib/goods-item/GoodsItem.js"></script>
 </head>
 <body>
 <div id="demo"></div>
 <script type="text/javascript">
     ReactDOM.render(
-            React.createElement(GmGoodsItem),
+            React.createElement(GoodsItem),
             document.getElementById('demo')
     )
 </script>

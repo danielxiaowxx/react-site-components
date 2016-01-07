@@ -17,21 +17,19 @@ small order是一个独立的react网站类项目(依赖于该部件项目), 里
 
 一样的准备工作:
 ```
-npm install webpack-dev-server webpack -g
 npm install
 ```
 
 开始开发
-```
-# 在一个控制台中开启开发服务器
-webpack-dev-server
 
-# 在另一个控制台中监控文件的变更并实时编译
-webpack -w
-
-# 最后打开浏览器访问
-http://localhost:8080/webpack-dev-server/demo/[component name]/index.html
+1. 运行以下命令
 ```
+gulp
+```
+
+2. 打开浏览器访问
+http://localhost:8080/demo/[component name]/index.html
+
 
 ### 如何增加一个新的部件(这里以增加商品桥页部件为例)(应该提供一个generator)
 
@@ -43,8 +41,6 @@ http://localhost:8080/webpack-dev-server/demo/[component name]/index.html
     GoodsItem: './goods-item/index',
   },
 ```
-
-
 
 ### 如何发布
 
@@ -63,6 +59,28 @@ key为首字母大写的驼峰式格式, 如:
   entry: {
     GoodsItem: './goods-item/index',
   },
+```
+
+子组件的命名为父级文件夹+自身文件夹名, 去掉*-*分隔符, 改用驼峰式写法, 如
+```
+  entry: {
+    GoodsItemDetails: ['./goods-item/details/index'],
+  },
+```
+
+. 部件层级结构
+
+只允许两层(文件夹的层级是两层,一个父级文件夹+很多的子级文件夹), 即一个默认拼好的主部件和它的子部件(子部件是最小单位, 不会再有子部件的子部件)
+
+
+### 使用方
+
+. 覆盖样式
+
+组件全部是基于bootstrap样式的, 可通过覆盖变量等来改变样式, 使用方需要指定自身依赖的bootstrap的路径, 如:
+
+```
+@bootstrapPath "node_modules/bootstrap"
 ```
 
 
