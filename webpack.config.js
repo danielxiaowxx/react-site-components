@@ -10,6 +10,8 @@ var webpackConfig = {
     GoodsItem: './goods-item/index',
     GoodsItemDetails: ['./goods-item/details/index'],
     GoodsItemPhotos: ['./goods-item/photos/index'],
+    Promotion: ['./promotion/index'],
+    PromotionProductCard1: ['./promotion/product-card-1/index'],
   },
   output: {
     path: path.join(__dirname, 'lib'),

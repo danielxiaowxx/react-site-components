@@ -9,7 +9,9 @@ var gulpLoadPlugins = require('gulp-load-plugins');
 var runSequence = require('run-sequence');
 var webpackConfig = require('./webpack.config.js');
 
-var plugins = gulpLoadPlugins({});
+var plugins = gulpLoadPlugins({
+  camelize: true
+});
 
 // Watch Files For Changes
 gulp.task('watch', function(done) {
@@ -31,10 +33,22 @@ gulp.task('css', function() {
   ];
 
   // 提供less源码
+  var tempComponetDirName;
   gulp.src('./src/**/style.less')
-    //.pipe(plugins.if(function(file) {
-    //  return file.path.substr(file.path.indexOf("/src/")).split('/').length === 4; // 父部件
-    //}, gulp.dest('./lib/')))
+    .pipe(plugins.if(function(file) {
+      var srcParialPath = file.path.substr(file.path.indexOf("/src/"));
+      if (srcParialPath.split('/').length === 4) { // 父部件
+        tempComponetDirName = path.dirname(file.path).split(path.sep).pop();
+        return true;
+      } else {
+        return false;
+      }
+    }, plugins.replaceAsync(/@import '\.\/([a-zA-Z0-9-]+)\/style';/g, function(match, callback) { // 替换父部件中引用子部件的样式路径
+      var newStr = match[1];
+      newStr = tempComponetDirName + '-' + newStr;
+      newStr = '@import "' + path.join('..', newStr, _.chain(newStr).camelCase().capitalize().value()) + '";';
+      callback(null, newStr);
+    })))
     .pipe(plugins.rename(function(file) {
       file.basename = _.chain(file.dirname.replace(/\|\//g, '-')).camelCase().capitalize().value();
       file.dirname = path.join('.', _.kebabCase(file.basename));
