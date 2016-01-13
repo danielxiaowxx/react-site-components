@@ -78,6 +78,13 @@ gulp.task('js', function() {
     .pipe(plugins.connect.reload());
 });
 
+gulp.task('js-lint', function() {
+  return gulp.src('./src/**/*.js')
+    .pipe(plugins.eslint())
+    .pipe(plugins.eslint.format(require('eslint-path-formatter')))
+    .pipe(plugins.eslint.failAfterError());
+});
+
 gulp.task('server', function(done) {
   plugins.connect.server({
     root      : '.',
@@ -89,7 +96,7 @@ gulp.task('server', function(done) {
 });
 
 gulp.task('build', function(done) {
-  runSequence('js', 'css', done);
+  runSequence('js-lint', 'js', 'css', done);
 });
 
 // Run the project in development mode

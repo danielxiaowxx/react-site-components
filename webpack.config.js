@@ -11,7 +11,7 @@ var webpackConfig = {
     GoodsItemDetails: ['./goods-item/details/index'],
     GoodsItemPhotos: ['./goods-item/photos/index'],
     Promotion: ['./promotion/index'],
-    PromotionProductCard1: ['./promotion/product-card-1/index'],
+    PromotionProductCardA: ['./promotion/product-card-a/index'],
   },
   output: {
     path: path.join(__dirname, 'lib'),
@@ -27,6 +27,12 @@ var webpackConfig = {
       commonjs2: 'react',
       commonjs: 'react',
       amd: 'react'
+    },
+    'lodash': {
+      root: '_',
+      commonjs2: 'lodash',
+      commonjs: 'lodash',
+      amd: 'lodash'
     }
   },
   module: {

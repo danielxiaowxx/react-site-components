@@ -3,13 +3,13 @@
  */
 
 var React = require('react');
-var ProductCard1 = require('./product-card-1');
+var ProductCardA = require('./product-card-a');
 
 var Promotion = React.createClass({
   render: function() {
     return (
       <div className="promotion">
-        <ProductCard1 />
+        <ProductCardA />
       </div>
     )
   }

@@ -1,0 +1,71 @@
+.promotion {
+  .product-card-a {
+    padding: 15px 10px;
+    height: 380px;
+    width: 200px;
+    border-radius: 0px;
+    font-size: 12px;
+    position: relative;
+
+    img {
+      width: 168px;
+      height: 168px;
+    }
+
+    .lot-saling {
+      font-style: normal;
+      background: #f85725;
+      z-index: 2;
+      text-align: center;
+      width: 56px;
+      height: 40px;
+      position: absolute;
+      top: -1px;
+      font-weight: 700;
+      color: #fff;
+      font-size: 20px;
+      &:after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        border-left: 28px solid transparent;
+        border-right: 28px solid transparent;
+        border-top: 10px solid #f85725;
+        border-bottom: 0 solid transparent;
+      }
+      small {
+        position: relative;
+        top: -4px;
+        display: block;
+        font-size: 12px;
+      }
+    }
+
+    .product-name {
+      height: 3em;
+      word-break: break-all;
+      overflow: hidden;
+    }
+
+    .del {
+      text-decoration: line-through;
+      color: #777;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    span {
+      p {
+        height: 20px;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}

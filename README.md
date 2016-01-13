@@ -12,6 +12,11 @@ small order是一个独立的react网站类项目(依赖于该部件项目), 里
 
 北美渠道的商品桥页可以重用small order的商品桥页的某些部件, 如商品图片部件, 商品详情部件等
 
+### 代码规范
+
+参考: [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
+
+实际的规范约束请看*.eslintrc*的配置
 
 ### 如何开发
 
@@ -77,6 +82,11 @@ key为首字母大写的驼峰式格式, 如:
 统一存放在静态资源服务器上, 这里仅需引用其链接即可
 
 ### 使用方
+
+. 需要提供的基础库
+
+1. react
+2. lodash
 
 . 覆盖样式
 
