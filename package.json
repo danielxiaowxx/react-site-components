@@ -1,6 +1,6 @@
 {
   "name": "react-site-components",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "globalmarket site components implemented by react",
   "main": "lib/index.js",
   "scripts": {
@@ -39,11 +39,11 @@
     "gulp-webpack": "^1.5.0",
     "lodash": "^3.10.1",
     "run-sequence": "^1.1.5",
-    "webpack": "^1.12.9"
-  },
-  "dependencies": {
-    "react": "^0.14.5",
+    "webpack": "^1.12.9",
     "react-dom": "^0.14.5",
     "bootstrap": "^3.3.6"
+  },
+  "dependencies": {
+    "react": "^0.14.5"
   }
 }
