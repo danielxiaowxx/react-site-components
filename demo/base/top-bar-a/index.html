@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test the components</title>
+
+    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="../../../node_modules/react/dist/react.js"></script>
+    <script type="text/javascript" src="../../../node_modules/react-dom/dist/react-dom.js"></script>
+    <script type="text/javascript" src="../../../node_modules/lodash/index.js"></script>
+
+    <link rel="stylesheet" href="../../../lib/base-top-bar-a/BaseTopBarA.css">
+    <script type="text/javascript" src="../../../lib/base-top-bar-a/BaseTopBarA.js"></script>
+</head>
+<body>
+<div id="demo" class="base"></div>
+<script type="text/javascript">
+    ReactDOM.render(
+        React.createElement(BaseTopBarA, {
+            lang: 'en'
+        }),
+        document.getElementById('demo')
+    )
+</script>
+</body>
+</html>

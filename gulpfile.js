@@ -7,6 +7,7 @@ var path = require('path');
 var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');
 var runSequence = require('run-sequence');
+var browserSync = require('browser-sync').create();
 var webpackConfig = require('./webpack.config.js');
 
 var plugins = gulpLoadPlugins({
@@ -64,7 +65,8 @@ gulp.task('css', function() {
     .pipe(plugins.less())
     .pipe(plugins.postcss(processors))
     .pipe(gulp.dest('./lib/'))
-    .pipe(plugins.connect.reload());
+    //.pipe(plugins.connect.reload())
+    .pipe(browserSync.stream());
 });
 
 // js task
@@ -75,7 +77,7 @@ gulp.task('js', function() {
       file.dirname = path.join('.', _.kebabCase(file.basename));
     }))
     .pipe(gulp.dest(webpackConfig.output.path))
-    .pipe(plugins.connect.reload());
+    .pipe(browserSync.stream());
 });
 
 gulp.task('js-lint', function() {
@@ -86,11 +88,9 @@ gulp.task('js-lint', function() {
 });
 
 gulp.task('server', function(done) {
-  plugins.connect.server({
-    root      : '.',
-    port      : 8080,
-    livereload: {
-      port: 35739
+  browserSync.init({
+    server: {
+      baseDir: "./"
     }
   });
 });

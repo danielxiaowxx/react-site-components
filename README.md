@@ -33,19 +33,30 @@ gulp
 ```
 
 2. 打开浏览器访问
-http://localhost:8080/demo/[component name]/index.html
+http://localhost:3000/demo/[component name]/index.html
 
 
-### 如何增加一个新的部件(这里以增加商品桥页部件为例)(应该提供一个generator)
-
-1. 在src中新增部件目录goods-item, 在该目录下新建index.js
-
-2. 在webpack.config.js的entry中增加需要暴露出去的部件
+### 安装代码生成器
+```bash
+npm install -g yo
+npm install -g generator-react-components
 ```
-  entry: {
-    GoodsItem: './goods-item/index',
-  },
+
+### 如何增加一个部件 (子部分请往下看)
 ```
+yo react-components:add-component [component name]
+
+例子:
+
+yo react-components:add-component goods-item
+```
+
+### 如何增加一个子部分
+```
+yo react-components:add-subcomp
+```
+
+然后按提示操作
 
 ### 如何发布
 

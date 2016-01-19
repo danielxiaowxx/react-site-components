@@ -12,6 +12,10 @@ var webpackConfig = {
     GoodsItemPhotos: ['./goods-item/photos/index'],
     Promotion: ['./promotion/index'],
     PromotionProductCardA: ['./promotion/product-card-a/index'],
+    BaseTopBarA: ['./base/top-bar-a/index'],
+    BaseSearchBarA: ['./base/search-bar-a/index'],
+    BaseFooterBarA: ['./base/footer-bar-a/index'],
+    // Don't touch me
   },
   output: {
     path: path.join(__dirname, 'lib'),
