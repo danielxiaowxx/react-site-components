@@ -1,8 +1,0 @@
-.idea/
-node_modules/
-.yo-rc.json
-.eslintrc
-.npmignore
-.nvmrc
-gulpfile.js
-webpack.config.js

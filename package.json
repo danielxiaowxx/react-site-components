@@ -1,6 +1,6 @@
 {
   "name": "react-site-components",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "globalmarket site components implemented by react",
   "main": "lib/index.js",
   "scripts": {
@@ -18,6 +18,11 @@
   ],
   "author": "Daniel.xiao",
   "license": "ISC",
+  "files": [
+    "lib/",
+    "demo/",
+    "src/"
+  ],
   "devDependencies": {
     "autoprefixer": "^6.2.3",
     "babel-core": "^6.3.26",

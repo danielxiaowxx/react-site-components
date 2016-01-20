@@ -104,7 +104,7 @@ key为首字母大写的驼峰式格式, 如:
 组件全部是基于bootstrap样式的, 可通过覆盖变量等来改变样式, 使用方需要指定自身依赖的bootstrap的路径, 如:
 
 ```
-@bootstrapPath "node_modules/bootstrap"
+@bootstrapPath: "node_modules/bootstrap";
 ```
 
 

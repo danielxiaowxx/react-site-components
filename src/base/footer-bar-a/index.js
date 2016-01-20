@@ -15,12 +15,6 @@ var FooterBarA = React.createClass({
     // 事件
   },
 
-  getInitialState: function() {
-    return {
-      showMore: false
-    }
-  },
-
   getDefaultProps: function() {
     return {
       // 组件固定入参 - 所有组件都需要提供该属性
@@ -29,6 +23,12 @@ var FooterBarA = React.createClass({
       // 组件特定入参 - 不同的组件需要的属性是不同的
 
       // 事件
+    }
+  },
+
+  getInitialState: function() {
+    return {
+      showMore: false
     }
   },
 
